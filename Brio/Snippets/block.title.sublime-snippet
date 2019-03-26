@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}block '${1:title}'${BRIO_RDELIM:\}}{${2:parent}} - {\$${3:title}}${BRIO_LDELIM:\{}/block${BRIO_RDELIM:\}}${0}
+]]></content>
+<description>brio block title</description>
+<tabTrigger>block</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

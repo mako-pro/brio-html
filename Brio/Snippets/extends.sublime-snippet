@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}extends '${1:file_name}'${BRIO_RDELIM:\}}${0}
+]]></content>
+<description>brio extends</description>
+<tabTrigger>extends</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

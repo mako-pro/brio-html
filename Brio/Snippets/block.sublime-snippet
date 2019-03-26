@@ -1,0 +1,11 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}block '${1:blockname}'${BRIO_RDELIM:\}}
+	${2}
+${BRIO_LDELIM:\{}/block${BRIO_RDELIM:\}}
+	${0}
+]]></content>
+<description>brio block</description>
+<tabTrigger>block</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

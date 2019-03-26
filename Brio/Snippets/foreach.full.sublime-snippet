@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}foreach \$${1:list} as ${2:\$${3:key} => \$${4:value}} ${5:index=\$index first=\$first last=\$last}${BRIO_RDELIM:\}}
+	${6:${BRIO_LDELIM:\{}* code *${BRIO_RDELIM:\}}
+	${BRIO_LDELIM:\{}break${BRIO_RDELIM:\}}
+	${BRIO_LDELIM:\{}* code *${BRIO_RDELIM:\}}
+	${BRIO_LDELIM:\{}continue${BRIO_RDELIM:\}}
+	${BRIO_LDELIM:\{}* code *${BRIO_RDELIM:\}}
+${BRIO_LDELIM:\{}foreachelse${BRIO_RDELIM:\}}
+	${BRIO_LDELIM:\{}* code *${BRIO_RDELIM:\}}}
+${BRIO_LDELIM:\{}/foreach${BRIO_RDELIM:\}}$0
+]]></content>
+<description>brio foreach full</description>
+<tabTrigger>foreach</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

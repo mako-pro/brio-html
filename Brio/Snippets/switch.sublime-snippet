@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}switch \$${1:foo}${BRIO_RDELIM:\}}
+	${BRIO_LDELIM:\{}case 'value1'${BRIO_RDELIM:\}}
+		${2:{* code *\}}
+	${3:${BRIO_LDELIM:\{}case 'value2', 'value3'${BRIO_RDELIM:\}}
+		${4:{* code *\}}}
+	${BRIO_LDELIM:\{}case default${BRIO_RDELIM:\}}
+		${5:{* code *\}}
+${BRIO_LDELIM:\{}/switch${BRIO_RDELIM:\}}${0}
+]]></content>
+<description>brio switch</description>
+<tabTrigger>switch</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}* ${1:comment} *${BRIO_RDELIM:\}}$0
+]]></content>
+<description>brio comment</description>
+<tabTrigger>comment</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

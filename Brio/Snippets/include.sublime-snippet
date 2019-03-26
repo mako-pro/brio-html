@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}include '${1:filename}' ${3:var='${2:value}'}${BRIO_RDELIM:\}}$0
+]]></content>
+<description>brio include</description>
+<tabTrigger>include</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

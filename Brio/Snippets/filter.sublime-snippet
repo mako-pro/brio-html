@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}filter|${1:strip}${BRIO_RDELIM:\}}
+	$0
+${BRIO_LDELIM:\{}/filter${BRIO_RDELIM:\}}
+]]></content>
+<description>brio filter</description>
+<tabTrigger>filter</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

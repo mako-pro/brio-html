@@ -1,0 +1,127 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: Brio
+file_extensions:
+  - brio
+scope: text.html.brio
+
+contexts:
+  main:
+    - match: ''
+      push: scope:text.html.basic
+      with_prototype:
+        - match: '(\{%?)\*'
+          captures:
+            1: punctuation.definition.comment.brio
+          push:
+            - meta_scope: comment.block.brio
+            - match: '\*(%?\})'
+              pop: true
+        - match: '(\{%?)'
+          captures:
+            1: punctuation.section.embedded.begin.brio
+          push:
+            - meta_scope: source.brio
+            - match: '(%?\})'
+              captures:
+                1: punctuation.section.embedded.end.brio
+              pop: true
+            - include: strings
+            - include: variables
+            - include: lang
+
+  lang:
+    - match: '\+|\-|\*'
+      scope: keyword.operator.math.brio
+    - match: (!==|!=|!|=>|<=|>=|<|>|===|==|%|&&|\|\|)|\b(and|or|eq|neq|ne|gte|gt|ge|lte|lt|le|not|mod)\b
+      scope: keyword.operator.brio
+    - match: '\,'
+      scope: punctuation.separator.brio
+    - match: \b(TRUE|FALSE|true|false)\b
+      scope: constant.language.brio
+    - match: \b(if|else|elseif|foreach|foreachelse|from|switch|case|break|continue|parent|default|as)\b
+      scope: keyword.control.brio
+    - match: '\b([0-1]+)\b'
+      scope: constant.numeric.brio
+    - match: '\b([a-zA-Z]+)(=)'
+      scope: meta.attribute.brio
+      captures:
+        0: variable.parameter.brio
+        2: keyword.operator.assignment.brio
+    - match: '\b(add|set|unset|raw|macro|cycle|debug|ignore|script|import|include|insert|autoescape|autotrim|filter|extends|block|use)\b'
+      scope: support.function.built-in.brio
+    - match: '\b([a-z-_]+)\b(?=\()'
+      scope: meta.function-call.brio
+      captures:
+        1: variable.function.brio
+      push:
+        - meta_scope: meta.group.brio
+        - match: '\('
+          scope: punctuation.group.begin.brio
+        - match: '\)'
+          scope: punctuation.group.end.brio
+          pop: true
+        - include: lang
+        - include: variables
+        - include: strings
+
+    - match: (\|)(upper|lower|capfirst|title|date_format|date|truncate|escape|unescape|strip_tags|strip|length|iterable|replace|ereplace|match|ematch|split|esplit|join|in|range)
+      captures:
+        1: keyword.operator.logical.pipe.brio
+        2: support.function.variable-modifier.brio
+    - match: (\|)([a-z-_]+)
+      captures:
+        1: keyword.operator.logical.pipe.brio
+        2: support.function.variable-modifier.custom.brio
+
+  strings:
+    - match: "'"
+      captures:
+        0: punctuation.definition.string.begin.brio
+      push:
+        - meta_scope: string.quoted.single.brio
+        - match: "'"
+          captures:
+            0: punctuation.definition.string.end.brio
+          pop: true
+        - match: \\.
+          scope: constant.character.escape.brio
+    - match: '"'
+      captures:
+        0: punctuation.definition.string.begin.brio
+      push:
+        - meta_scope: string.quoted.double.brio
+        - match: '"'
+          captures:
+            0: punctuation.definition.string.end.brio
+          pop: true
+        - match: \\.
+          scope: constant.character.escape.brio
+
+  variables:
+    - match: '(\$)([\.a-zA-Z_][\.a-zA-Z0-9_]*)\b'
+      scope: variable.other.brio
+      captures:
+        1: punctuation.definition.variable.brio
+    - match: '(->)([a-zA-Z_][a-zA-Z0-9_]*)\b(?=\()'
+      scope: meta.function-call.object.brio
+      captures:
+        1: keyword.operator.brio
+        2: variable.function.brio
+        3: punctuation.definition.variable.brio
+        4: punctuation.definition.variable.brio
+      push:
+        - meta_scope: meta.group.brio
+        - match: '\('
+          scope: punctuation.group.begin.brio
+        - match: '\)'
+          scope: punctuation.group.end.brio
+          pop: true
+        - include: variables
+        - include: strings       
+    - match: '(->)([a-zA-Z_][a-zA-Z0-9_]*)\b'
+      scope: variable.other.brio
+      captures:
+        1: keyword.operator.brio
+        2: variable.other.property.brio      

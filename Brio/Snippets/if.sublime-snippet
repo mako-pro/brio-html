@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}if ${1:condition}${BRIO_RDELIM:\}}
+	$0
+${BRIO_LDELIM:\{}/if${BRIO_RDELIM:\}}
+]]></content>
+<description>brio if</description>
+<tabTrigger>if</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

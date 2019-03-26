@@ -1,0 +1,9 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}case ${1:casename}${BRIO_RDELIM:\}}
+	$0
+]]></content>
+<description>brio case</description>
+<tabTrigger>case</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

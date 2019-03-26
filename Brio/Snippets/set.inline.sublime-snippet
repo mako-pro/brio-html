@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}set \$${1:foo} = ${2:'bar'}${BRIO_RDELIM:\}}${0}
+]]></content>
+<description>brio set inline</description>
+<tabTrigger>set</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

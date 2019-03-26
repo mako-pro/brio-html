@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}set \$${1:var}${BRIO_RDELIM:\}}
+	$0
+${BRIO_LDELIM:\{}/set${BRIO_RDELIM:\}}
+]]></content>
+<description>brio set</description>
+<tabTrigger>set</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

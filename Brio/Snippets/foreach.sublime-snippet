@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}foreach \$${1:list} as \$${2:value}${BRIO_RDELIM:\}}
+	$0
+${BRIO_LDELIM:\{}/foreach${BRIO_RDELIM:\}}
+]]></content>
+<description>brio foreach</description>
+<tabTrigger>foreach</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

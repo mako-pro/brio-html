@@ -1,0 +1,12 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}if ${1:condition}${BRIO_RDELIM:\}}
+	$2
+${BRIO_LDELIM:\{}else${BRIO_RDELIM:\}}
+	$3
+${BRIO_LDELIM:\{}/if${BRIO_RDELIM:\}}
+]]></content>
+<description>brio ifelse</description>
+<tabTrigger>ifelse</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+${BRIO_LDELIM:\{}cycle [${1:'odd', 'even'}]${2: index=\$i}${BRIO_RDELIM:\}}$0
+]]></content>
+<description>brio cycle</description>
+<tabTrigger>cycle</tabTrigger>
+<scope>text.html.brio,source.brio</scope>
+</snippet>
